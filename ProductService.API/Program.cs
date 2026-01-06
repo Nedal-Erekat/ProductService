@@ -8,9 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 
-// DbContext (PostgreSQL)
+// Use SQLite instead of PostgreSQL
 builder.Services.AddDbContext<ProductDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
 
 // Repositories / DI
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
