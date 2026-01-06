@@ -17,6 +17,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 // Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -38,7 +39,7 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty; // Swagger at root
     });
 }
-
+app.MapControllers();
 app.UseHttpsRedirection();
 
 // // Example: Minimal API route for products (optional)
