@@ -3,6 +3,10 @@ using Microsoft.OpenApi.Models;
 using ProductService.Application.Common.Interfaces;
 using ProductService.Infrastructure.Persistence;
 using ProductService.Infrastructure.Repositories;
+using BuildingBlocks.Contracts.Events;
+using BuildingBlocks.Contracts.Messaging;
+using ProductService.Application.Events;
+using ProductService.API.EventBus;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +22,10 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 // Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
+builder.Services.AddScoped<OrderCreatedEventHandler>();
+builder.Services.AddSingleton<IEventBus, ConsoleEventBus>();
+builder.Services.AddScoped<OrderCreatedEventHandler>();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -28,6 +36,11 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+var eventBus = app.Services.GetRequiredService<IEventBus>();
+
+eventBus.Subscribe<OrderCreatedEvent, OrderCreatedEventHandler>();
+
 
 // Middleware / HTTP pipeline
 if (app.Environment.IsDevelopment())
