@@ -6,7 +6,7 @@ using ProductService.Infrastructure.Repositories;
 using BuildingBlocks.Contracts.Events;
 using BuildingBlocks.Contracts.Messaging;
 using ProductService.Application.Events;
-using ProductService.API.EventBus;
+using BuildingBlocks.EventBus.InMemory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,9 +23,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 builder.Services.AddScoped<OrderCreatedEventHandler>();
-builder.Services.AddSingleton<IEventBus, ConsoleEventBus>();
-builder.Services.AddScoped<OrderCreatedEventHandler>();
-
+builder.Services.AddSingleton<IEventBus, InMemoryEventBus>();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -38,9 +36,7 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 var eventBus = app.Services.GetRequiredService<IEventBus>();
-
 eventBus.Subscribe<OrderCreatedEvent, OrderCreatedEventHandler>();
-
 
 // Middleware / HTTP pipeline
 if (app.Environment.IsDevelopment())
@@ -52,16 +48,7 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty; // Swagger at root
     });
 }
+
 app.MapControllers();
 app.UseHttpsRedirection();
-
-// // Example: Minimal API route for products (optional)
-// app.MapGet("/products", async (IProductRepository repo) =>
-// {
-//     var products = await repo.GetAllAsync();
-//     return Results.Ok(products);
-// })
-// .WithName("GetProducts")
-// .WithOpenApi();
-
 app.Run();

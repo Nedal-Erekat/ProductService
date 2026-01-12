@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\repos\\New folder\\ProductService\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1A8D46A-F4E0-465A-AC9A-2D0CE29AEC3C}|ProductService.API\\ProductService.API.csproj|c:\\repos\\new folder\\productservice\\productservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1A8D46A-F4E0-465A-AC9A-2D0CE29AEC3C}|ProductService.API\\ProductService.API.csproj|solutionrelative:productservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C81C53B-6ECE-4851-9AA7-12C26EBAD3A0}|ProductService.Application\\ProductService.Application.csproj|c:\\repos\\new folder\\productservice\\productservice.application\\productservice.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0C81C53B-6ECE-4851-9AA7-12C26EBAD3A0}|ProductService.Application\\ProductService.Application.csproj|solutionrelative:productservice.application\\productservice.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\repos\\New folder\\ProductService\\ProductService.API\\Program.cs",
+              "RelativeDocumentMoniker": "ProductService.API\\Program.cs",
+              "ToolTip": "C:\\repos\\New folder\\ProductService\\ProductService.API\\Program.cs",
+              "RelativeToolTip": "ProductService.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T09:23:07.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductService.Application.csproj",
+              "DocumentMoniker": "C:\\repos\\New folder\\ProductService\\ProductService.Application\\ProductService.Application.csproj",
+              "RelativeDocumentMoniker": "ProductService.Application\\ProductService.Application.csproj",
+              "ToolTip": "C:\\repos\\New folder\\ProductService\\ProductService.Application\\ProductService.Application.csproj",
+              "RelativeToolTip": "ProductService.Application\\ProductService.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-12T09:07:37.495Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ProductService.Application\ProductService.Application.csproj" />
     <ProjectReference Include="..\ProductService.Infrastructure\ProductService.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\BuildingBlocks.EventBus.InMemory\BuildingBlocks.EventBus.InMemory.csproj" />
   </ItemGroup>
 
   <ItemGroup>
